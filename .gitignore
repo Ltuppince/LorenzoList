@@ -1,4 +1,8 @@
 node_modules
 /config/config.json
+<<<<<<< HEAD
 .DS_Store
+=======
+Ds_Store
+>>>>>>> master
 package-lock.json
