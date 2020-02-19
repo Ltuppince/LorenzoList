@@ -1,3 +1,4 @@
 node_modules
 /config/config.json
 Ds_Store
+package-lock.json
