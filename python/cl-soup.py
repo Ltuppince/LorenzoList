@@ -3,13 +3,13 @@ import urllib.request
 import pandas as pd
 
 categoryList = [
-    # {"title": "household.csv", "url": "https://richmond.craigslist.org/search/hsa?search_distance=2&postal=23220"},
-    # {"title": "musicinst.csv", "url": "https://richmond.craigslist.org/search/msa?search_distance=2&postal=23220"},
-    # {"title": "furnature.csv", "url": "https://richmond.craigslist.org/search/fua?search_distance=2&postal=23220"},
-    # {"title": "electronics.csv", "url": "https://richmond.craigslist.org/search/ela?search_distance=2&postal=23220"},
-    # {"title": "sporting.csv", "url": "https://richmond.craigslist.org/search/sga?search_distance=2&postal=23220"},
-    # {"title": "autos.csv", "url": "https://richmond.craigslist.org/search/cta?search_distance=2&postal=23220"},
-    # {"title": "misc.csv", "url": "https://richmond.craigslist.org/search/foa?search_distance=2&postal=23220"},
+    {"title": "household.csv", "url": "https://richmond.craigslist.org/search/hsa?search_distance=2&postal=23220"},
+    {"title": "musicinst.csv", "url": "https://richmond.craigslist.org/search/msa?search_distance=2&postal=23220"},
+    {"title": "furnature.csv", "url": "https://richmond.craigslist.org/search/fua?search_distance=2&postal=23220"},
+    {"title": "electronics.csv", "url": "https://richmond.craigslist.org/search/ela?search_distance=2&postal=23220"},
+    {"title": "sporting.csv", "url": "https://richmond.craigslist.org/search/sga?search_distance=2&postal=23220"},
+    {"title": "autos.csv", "url": "https://richmond.craigslist.org/search/cta?search_distance=2&postal=23220"},
+    {"title": "misc.csv", "url": "https://richmond.craigslist.org/search/foa?search_distance=2&postal=23220"},
     {"title": "collectibles.csv", "url": "https://richmond.craigslist.org/search/cba?search_distance=2&postal=23220"},
 ]
 
