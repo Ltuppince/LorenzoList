@@ -3,7 +3,7 @@ import os
 import random
 
 if os.path.exists("../sql/items.seed.sql"):
-  os.remove("../sql/items.seed.sql")
+    os.remove("../sql/items.seed.sql")
 
 categorys = [
     {"id": 1, "filename": "csv/autos.csv"},
@@ -16,23 +16,20 @@ categorys = [
     {"id": 8, "filename": "csv/sporting.csv"}
 ]
 
-condition = ["good", "like new", "fair", "great", "excellent", "new", "needs love", "seen better days"]
+condition = ["good", "like new", "fair", "great",
+             "excellent", "new", "needs love", "seen better days"]
 
 for cat in categorys:
-
-    data = pd.read_csv(cat["filename"]) 
+    data = pd.read_csv(cat["filename"])
     print(data.head())
-
     buff = ""
-
     for index, row in data.iterrows():
-        user_id = random.randint(1,1001)
+        user_id = random.randint(1, 1001)
         title = row.title.replace('"', '')
         post = row.post.replace('"', '')
-        i = random.randint(0,len(condition)-1)
+        i = random.randint(0, len(condition)-1)
         s = f'INSERT INTO Items (category_id, title, price, img, post, user_id) VALUES ("{cat["id"]}", "{title}", "{row.price}", "{row.img}", "{post}", "{user_id}");\n'
         buff += s
-
     f = open("../sql/items.seed.sql", "a")
     f.write(buff)
     f.close()
