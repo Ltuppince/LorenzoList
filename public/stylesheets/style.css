@@ -2,3 +2,16 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+
+.categorySelect {
+  margin-bottom: 25px;
+}
+
+.uk-card {
+  margin-bottom: 15px;
+}
