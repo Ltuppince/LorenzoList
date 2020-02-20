@@ -6,7 +6,7 @@ print(data.head())
 buff = ""
 
 for index, row in data.iterrows():
-    s = f"INSERT INTO Users (username, email, passord) VALUES ({row.username}, {row.email}, {row.password});\n"
+    s = f"INSERT INTO Users (username, email, password) VALUES ('{row.username}', '{row.email}', '{row.password}');\n"
     buff += s
 
 f = open("../sql/users.seed.sql", "w")
