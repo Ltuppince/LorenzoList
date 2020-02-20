@@ -24,8 +24,7 @@ CREATE TABLE Items (
     price INTEGER NULL,
     img VARCHAR(255),
     post VARCHAR(255),
-    cond VARCHAR(30),
-    user_id INTEGER NOT NULL,
+     user_id INTEGER NOT NULL,
     CONSTRAINT `fk_user_id`
     FOREIGN KEY (user_id) 
         REFERENCES Users(id)
