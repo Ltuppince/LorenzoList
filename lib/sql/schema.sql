@@ -9,12 +9,14 @@ CREATE TABLE Users (
     username VARCHAR(60) NOT NULL,
     email VARCHAR(60) NOT NULL,
     password VARCHAR(32) NOT NULL,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE Categorys (
+CREATE TABLE Categories (
     id INTEGER NOT NULL AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -27,6 +29,7 @@ CREATE TABLE Items (
     img VARCHAR(255),
     post TEXT,
     user_id INTEGER NOT NULL,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT `fk_user_id`
     FOREIGN KEY (user_id) 
         REFERENCES Users(id)
@@ -34,7 +37,7 @@ CREATE TABLE Items (
         ON DELETE RESTRICT,
     CONSTRAINT `fk_category_id`
     FOREIGN KEY (category_id) 
-        REFERENCES Categorys(id)
+        REFERENCES Categories(id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT        
 );
@@ -45,6 +48,7 @@ CREATE TABLE Messages (
     author_id INTEGER NOT NULL,
     recipient_id INTEGER NOT NULL,
     body TEXT,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT `fk_author_id`
         FOREIGN KEY (author_id) 
             REFERENCES Users(id)
@@ -56,3 +60,4 @@ CREATE TABLE Messages (
             ON UPDATE CASCADE
             ON DELETE RESTRICT
 );
+ 
