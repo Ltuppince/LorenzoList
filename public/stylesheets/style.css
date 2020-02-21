@@ -8,10 +8,24 @@ form.login {
   margin-bottom: 20px;
 }
 
+.navbar-brand:hover {
+  color: #4aaaa5 !important;
+  transition: .5s;
+}
+
 .categorySelect {
   margin-bottom: 25px;
 }
 
 .uk-card {
   margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.uk-card-footer {
+  padding-bottom: 0;
+}
+
+.uk-card:hover {
+  cursor: pointer;
 }
