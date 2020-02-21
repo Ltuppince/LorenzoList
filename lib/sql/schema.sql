@@ -6,6 +6,7 @@ USE LorenzoList_db;
 
 CREATE TABLE Users (
     id INTEGER NOT NULL AUTO_INCREMENT,
+    username VARCHAR(60) NOT NULL,
     email VARCHAR(60) NOT NULL,
     password VARCHAR(32) NOT NULL,
     PRIMARY KEY (id)
@@ -37,6 +38,7 @@ CREATE TABLE Messages (
     PRIMARY KEY (id),
     author_id INTEGER NOT NULL,
     recipient_id INTEGER NOT NULL,
+    body TEXT,
     CONSTRAINT `fk_author_id`
         FOREIGN KEY (author_id) 
             REFERENCES Users(id)
