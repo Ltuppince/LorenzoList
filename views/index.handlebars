@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <form class="categorySelect col-lg-3">
+            <select class="uk-select">
+                {{#each categories}}
+                <option>{{category_name}}</option>
+                {{/each}}
+            </select>
+        </form>
+    </div>
+
+    <div class="row">
+        {{#each items}}
+        <div class="uk-grid-match col-lg-3 col-md-4 col-sm-6" data-cat="{{item_category}}" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                    <h3 class="uk-card-title">{{item_title}}</h3>
+                    <p>{{item_price}}</p>
+                    <p>{{item_post}}</p>
+                    <div class="uk-card-footer">
+                        <a href="#" class="uk-button uk-button-text">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
