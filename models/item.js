@@ -37,5 +37,15 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+  //////////////remove  code //////////////////
+  Item.associate = function(models) {
+    Item.belongsTo(models.Category, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  //////////////////////////////////////
+
   return Item;
 };
