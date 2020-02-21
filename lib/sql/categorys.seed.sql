@@ -1,8 +1,8 @@
-INSERT INTO Categorys (name) VALUES ("autos");
-INSERT INTO Categorys (name) VALUES ("collectibles");
-INSERT INTO Categorys (name) VALUES ("electronics");
-INSERT INTO Categorys (name) VALUES ("furnature");
-INSERT INTO Categorys (name) VALUES ("household");
-INSERT INTO Categorys (name) VALUES ("misc");
-INSERT INTO Categorys (name) VALUES ("musicinst");
-INSERT INTO Categorys (name) VALUES ("sporting");
+INSERT INTO Categories (name) VALUES ("autos");
+INSERT INTO Categories (name) VALUES ("collectibles");
+INSERT INTO Categories (name) VALUES ("electronics");
+INSERT INTO Categories (name) VALUES ("furnature");
+INSERT INTO Categories (name) VALUES ("household");
+INSERT INTO Categories (name) VALUES ("misc");
+INSERT INTO Categories (name) VALUES ("musicinst");
+INSERT INTO Categories (name) VALUES ("sporting");
