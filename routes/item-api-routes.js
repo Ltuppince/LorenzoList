@@ -4,7 +4,7 @@ var passport = require("../config/passport");
 
 module.exports = function(app) {
 
-  app.get("/api/item", function(req, res) {
+  app.get("/api/items", function(req, res) {
     if (!req.user) {
       res.json({});
     } else {

@@ -36,17 +36,25 @@ module.exports = function(sequelize, DataTypes) {
       },
       as: "User"
     });
-  };
-
-  //////////////remove  code //////////////////
-  Item.associate = function(models) {
+    //////////////remove  code //////////////////
     Item.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false
       },
       as: "Category"
     });
+    //////////////////////////////////////
   };
+
+  //////////////remove  code //////////////////
+  // Item.associate = function(models) {
+  //   Item.belongsTo(models.Category, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     },
+  //     as: "Category"
+  //   });
+  // };
   //////////////////////////////////////
 
   return Item;
