@@ -33,7 +33,8 @@ module.exports = function(sequelize, DataTypes) {
     Item.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
-      }
+      },
+      as: "User"
     });
   };
 
@@ -42,7 +43,8 @@ module.exports = function(sequelize, DataTypes) {
     Item.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false
-      }
+      },
+      as: "Category"
     });
   };
   //////////////////////////////////////
