@@ -1,5 +1,39 @@
+STEP ONE:
+
+DROP DATABASE IF EXISTS LorenzoList_db;
+
+CREATE DATABASE LorenzoList_db;
+
+USE LorenzoList_db;
+
+
+STEP TWO:
+start app in vscode
+
+
+STEP THREE:
+
+ALTER TABLE `LorenzoList_db`.`Users` 
+CHANGE COLUMN `createdAt` `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+CHANGE COLUMN `updatedAt` `updatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+ALTER TABLE `LorenzoList_db`.`Categories` 
+CHANGE COLUMN `createdAt` `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+CHANGE COLUMN `updatedAt` `updatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+ALTER TABLE `LorenzoList_db`.`Items` 
+CHANGE COLUMN `createdAt` `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+CHANGE COLUMN `updatedAt` `updatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+ALTER TABLE `LorenzoList_db`.`Messages` 
+CHANGE COLUMN `createdAt` `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+CHANGE COLUMN `updatedAt` `updatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+
+STEP FOUR:
+seed database
+
 mysql --user=root --password LorenzoList_db
-source lib/sql/schema.sql
 source lib/sql/users.seed.sql
 source lib/sql/categories.seed.sql
 source lib/sql/items.seed.sql
