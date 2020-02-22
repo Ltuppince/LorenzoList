@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require("../models");
 
 // GET route for getting all items for sale
-router.get("/", (req, res) => {
+router.get("/api/test", (req, res) => {
     db.Item.findAll((data) => {
         let itemObj = {
             items: data
