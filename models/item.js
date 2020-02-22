@@ -33,7 +33,14 @@ module.exports = function(sequelize, DataTypes) {
       Item.belongsTo(models.User, {
         foreignKey: {
           allowNull: false
-        }
+        },
+        as:"User"
+      });
+      Item.belongsTo(models.Category, {
+        foreignKey: {
+          allowNull: false
+        },
+        as:"Category"
       });
     };
 

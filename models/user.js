@@ -25,21 +25,14 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     User.hasMany(models.Item, {
       onDelete: "cascade"
     });
-  };
-
-  User.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     User.hasMany(models.Message, {
       onDelete: "cascade"
     });
+    
   };
-
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
