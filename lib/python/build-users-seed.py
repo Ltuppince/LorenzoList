@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv("csv/users.1000.csv") 
+data = pd.read_csv("csv/users.1000.csv")
 print(data.head())
 
 buff = ""
@@ -12,5 +12,3 @@ for index, row in data.iterrows():
 f = open("../sql/users.seed.sql", "w")
 f.write(buff)
 f.close()
-
-
