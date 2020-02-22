@@ -1,5 +1,5 @@
 mysql --user=root --password LorenzoList_db
 source lib/sql/schema.sql
 source lib/sql/users.seed.sql
-source lib/sql/categorys.seed.sql
+source lib/sql/categories.seed.sql
 source lib/sql/items.seed.sql
