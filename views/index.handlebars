@@ -3,7 +3,7 @@
         <form class="categorySelect col-lg-3">
             <select class="uk-select">
                 {{#each categories}}
-                <option>{{category_name}}</option>
+                <option data-id="{{id}}">{{name}}</option>
                 {{/each}}
             </select>
         </form>
@@ -14,9 +14,9 @@
         <div class="uk-grid-match col-lg-3 col-md-4 col-sm-6" data-cat="{{item_category}}" uk-grid>
             <div>
                 <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                    <h3 class="uk-card-title">{{item_title}}</h3>
-                    <p>{{item_price}}</p>
-                    <p>{{item_post}}</p>
+                    <h3 class="uk-card-title">{{title}}</h3>
+                    <p>{{price}}</p>
+                    <p>{{post}}</p>
                     <div class="uk-card-footer">
                         <a href="#" class="uk-button uk-button-text">More Info</a>
                     </div>
