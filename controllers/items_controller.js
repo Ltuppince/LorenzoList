@@ -13,6 +13,8 @@ router.get("/", (req, res) => {
     });
 });
 
+// --------------  WILL THESE NEXT TWO ROUTES BE HANDLED ALL IN FRONT END ONLY??
+
 // GET route for getting all items by a title
 router.get("/api/items/:title", (req, res) => {
     db.Item.findAll({
@@ -35,3 +37,5 @@ router.get("/api/items/:category", (req, res) => {
         res.render("index", {items: result});
     });
 });
+
+module.exports = router;

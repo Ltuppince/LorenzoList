@@ -14,6 +14,10 @@ form.login {
   transition: .5s;
 }
 
+.loginHeader {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .categorySelect {
   margin-bottom: 25px;
 }
