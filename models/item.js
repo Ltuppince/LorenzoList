@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Item = sequelize.define("Item", {
-    category_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
+    // category_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false
+    // },
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -19,11 +19,11 @@ module.exports = function(sequelize, DataTypes) {
     post: {
       type: DataTypes.TEXT,
       allowNull: false
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     }
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false
+    // }
 
   });
 
