@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="pick-form">
+        <div class="field">
+            <div class="control">
+                <button class="button" type="button" id="picker">Pick file</button>
+                <input type="hidden" id="fileupload">
+            </div>
+            <div class="control" id="nameBox"></div>
+            <div class="control" id="urlBox"></div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input class="button" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+
+    <div id="uploadedImage"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+    <script>
+        const apikey = "A3fHU5w6XSQa3yQw3l2vQz";
+        // const client = filestack.init(apikey);
+        // const options = {
+        //     accept: ["image/jpeg"],
+        //     fromSources: ["local_file_system"]
+        // };
+        // client.picker(options).open();
+        const client = filestack.init(apikey);
+        const options = {
+            onUploadDone: updateForm,
+            maxSize: 10 * 1024 * 1024,
+            accept: 'image/jpeg',
+            uploadInBackground: false,
+        };
+        const picker = client.picker(options);
+
+        // Get references to the DOM elements
+
+        const form = document.getElementById('pick-form');
+        const fileInput = document.getElementById('fileupload');
+        const btn = document.getElementById('picker');
+        const nameBox = document.getElementById('nameBox');
+        const urlBox = document.getElementById('urlBox');
+
+        // Add our event listeners
+
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            picker.open();
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // alert('Submitting: ' + fileInput.value);
+            const eImg = $('#uploadedImage');
+            const img = $("<img>").attr("src", fileInput.value);
+            eImg.append(img)
+        });
+
+        // Helper to overwrite the field input value
+
+        function updateForm(result) {
+            const fileData = result.filesUploaded[0];
+            fileInput.value = fileData.url;
+        };
+    </script>
+</body>
+
+</html>
