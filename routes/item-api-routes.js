@@ -8,10 +8,11 @@ module.exports = function(app) {
       res.json({});
     } else {
       db.Item.findAll({
-        where: query,
-        include: [db.User]
+        // where: query,
+        include: [{model: db.User, as: "User"}]
       }).then(function(dbItem) {
-        res.json(dbItem);
+        // res.json(dbItem);
+        res.render("../views/index", dbItem);
       });
     }
   });
