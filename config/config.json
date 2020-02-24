@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "",
+    "password": "Giants.2008",
+    "database": "LorenzoList_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -19,7 +19,7 @@
     "database": "jq7b0ct8v39rq2oi",
     "host": "y0nkiij6humroewt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "use_env_variable":"JAWSDB_URL"
-    
+    "use_env_variable":"JAWSDB_URL",
+    "port": "3306"
   }
 }
