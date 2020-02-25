@@ -28,6 +28,7 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/item-api-routes.js")(app);
+require("./routes/category-api-routes.js")(app);
 
 const itemController = require("./controllers/items_controller");
 

@@ -28,4 +28,17 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+  app.get("/newitem", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/newitem.html"));
+  });
+
+  app.get("/item/:id", isAuthenticated, function(req, res) {
+    let id = req.params.id;
+    console.log("itemId: ", id);
+    //res.sendFile(path.join(__dirname, "../public/item.html"));
+  });
+
+
+
+
 };
