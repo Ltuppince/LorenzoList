@@ -12,7 +12,11 @@ module.exports = function(app) {
         include: [{model: db.User, as: "User"}]
       }).then(function(dbItem) {
         // res.json(dbItem);
-        res.render("../views/index", dbItem);
+        let itemObj = {
+          items: dbItem
+        }
+        res.render("../views/index", itemObj);
+        console.log(itemObj.items);
       });
     }
   });
