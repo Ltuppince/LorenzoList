@@ -28,8 +28,13 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(dbItem) {
-      console.log(dbItem);
-      res.json(dbItem);
+      // console.log(dbItem);
+      // res.json(dbItem);
+      let itemObj = {
+        items: dbItem
+      }
+      res.render("../views/item", itemObj);
+      console.log(itemObj.items);
     });
   });
 

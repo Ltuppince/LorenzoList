@@ -11,14 +11,11 @@
 
     <div class="row">
         {{#each items}}
-        <div class="uk-grid-match col-lg-4 col-md-4 col-sm-6" data-cat="{{dataValues.CategoryId}}" uk-grid>
-            <div class="itemCard" data-id="{{dataValues.id}}">
-                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                    <h3 class="uk-card-title">{{dataValues.title}}</h3>
-                    <p>${{dataValues.price}}</p>
-                    <div class="uk-card-footer">
-                        <a href="#" class="uk-button uk-button-text">More Info</a>
-                    </div>
+        <div class="uk-grid-match col-lg-4 col-md-4 col-sm-6" data-id="{{dataValues.id}}" data-cat="{{dataValues.CategoryId}}" uk-grid>
+            <div class="itemCard" id="{{dataValues.id}}">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-body" id="{{dataValues.id}}">
+                    <h3 class="uk-card-title" id="{{dataValues.id}}">{{dataValues.title}}</h3>
+                    <p id="{{dataValues.id}}">${{dataValues.price}}</p>
                 </div>
             </div>
         </div>

@@ -32,11 +32,7 @@ $(document).ready(function() {
         // window.location.replace("/members");
         $.get("/api/items", function(res) {
           window.location.href = "/api/items";
-        })
-        // If there's an error, log the error
-
-        //  ---------------------------   TESTING .GET TO DISPLAY HANDLEBARS -----------------------------
-
+        });
       })
       .catch(function(err) {
         console.log(err);
