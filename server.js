@@ -29,9 +29,9 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/item-api-routes.js")(app);
 
-const itemController = require("./controllers/items_controller");
+// const itemController = require("./controllers/items_controller");
 
-app.use(itemController);
+// app.use(itemController);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
