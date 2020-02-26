@@ -9,7 +9,7 @@ module.exports = function(app) {
     } else {
       db.Item.findAll({
         // where: query,
-        include: [{model: db.User, as: "User"}]
+        include: [{ model: db.User, as: "User" }]
       }).then(function(dbItem) {
         // res.json(dbItem);
         let itemObj = {
@@ -59,8 +59,7 @@ module.exports = function(app) {
   // PUT route for updating items
   app.put("/api/items", function(req, res) {
     db.Item.update(
-      req.body,
-      {
+      req.body, {
         where: {
           id: req.body.id
         }
