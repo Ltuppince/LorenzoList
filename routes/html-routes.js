@@ -29,13 +29,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  // app.get("/items", isAuthenticated, (req, res) => {
-  //   let itemroutes = itemRoutes();
-  //   itemroutes.get("/api/items", (req, res) => {
-  //     let itemObj = {
-  //       items: dbItem
-  //     }
-  //     res.render("../views/index", itemObj);
-  //   });
-  // });
+  app.get("/newitem", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/newitem.html"));
+  });
+
+
 };

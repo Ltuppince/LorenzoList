@@ -8,8 +8,17 @@ module.exports = function(app) {
       res.json({});
     } else {
       db.Item.findAll({
-        // where: query,
-        include: [{model: db.User, as: "User"}]
+        //where: query,
+        // include: [{
+        //     model: db.User,
+        //     as: "User",
+        //     through: {
+        //       attributes: ['username'],
+        //       //where: {completed: true}
+        //     }
+        //   }]
+        // include: [{ model: db.User, as: "User" }]
+        include: [db.User.username]
       }).then(function(dbItem) {
         // res.json(dbItem);
         let itemObj = {
@@ -59,8 +68,7 @@ module.exports = function(app) {
   // PUT route for updating items
   app.put("/api/items", function(req, res) {
     db.Item.update(
-      req.body,
-      {
+      req.body, {
         where: {
           id: req.body.id
         }
