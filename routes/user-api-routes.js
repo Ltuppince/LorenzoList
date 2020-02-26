@@ -16,7 +16,7 @@ module.exports = function(app) {
   });
 
   // GET route for single author
-  app.get("/api/users/:id", function(req, res) {
+  app.get("/user/:id", function(req, res) {
     db.User.findOne({
       where: {
         id: req.params.id

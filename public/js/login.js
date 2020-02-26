@@ -28,15 +28,15 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
-        // window.location.replace("/members");
-        $.get("/items", function(res) {
-          window.location.href = "/items";
-        });
-        // Login to user page
-        // $.get("/user", (res) => {
-        //   window.location.href = "/user"
+      .then(function(email) {
+        // $.get("/items", function(res) {
+        //   window.location.href = "/items";
         // });
+        // Login to user page
+        console.log(email.id);
+        $.get(`/user/${email.id}`, (res) => {
+          window.location.href = "/user"
+        });
       })
       .catch(function(err) {
         console.log(err);
