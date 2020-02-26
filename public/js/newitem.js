@@ -59,7 +59,7 @@ $(document).ready(function() {
       })
       .then(function(data) {
         console.log(data);
-        window.location.replace(`/item/${data.id}`);
+        window.location.replace(`/items/${data.id}`);
       })
       .catch(handleNewItemErr);
   }
