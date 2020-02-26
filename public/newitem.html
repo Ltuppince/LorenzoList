@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <head>
+        <title>Post an Item</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/css/uikit.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="stylesheets/style.css" rel="stylesheet">
+    </head>
 
-    <title>New Item</title>
-</head>
+    <body>
 
-<body>
+        <nav class="navbar navbar-light bg-light text-center" style="display: block">
+            <a class="navbar-brand">Lorenzo's List</a>
+        </nav>
 
-
-    <div class="row">
-        <div class="col">
-            <form id="form-new-item-ID">
-                <div class="form-group">
-                    <label for="select-categories-ID">Category</label>
-                    <select class="form-control" id="select-categories-ID">
-                    </select>
+        <div class="container">
+            <div class="row">
+                <div class="col-6" id="postContainer">
+                    <form id="form-new-item-ID">
+                        <div class="form-group">
+                            <label for="select-categories-ID">Category</label>
+                            <select class="form-control" id="select-categories-ID">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-title-ID">Title</label>
+                            <input type="text" class="form-control" id="input-title-ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-price-ID">Price</label>
+                            <input type="text" class="form-control" id="input-price-ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="text-desctiption-ID">Description</label>
+                            <textarea class="form-control" id="text-desctiption-ID" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <!-- <button class="button" type="button" id="picker">Pick file</button> -->
+                            <button id="picker" type="button" class="btn btn-info mb-2">Upload Image</button>
+                            <!-- <input type="hidden" id="fileupload"> -->
+                            <input type="text" id="fileupload">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info mb-2">Create New Item</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="input-title-ID">Title</label>
-                    <input type="text" class="form-control" id="input-title-ID">
-                </div>
-                <div class="form-group">
-                    <label for="input-price-ID">Price</label>
-                    <input type="text" class="form-control" id="input-price-ID">
-                </div>
-                <div class="form-group">
-                    <label for="text-desctiption-ID">Description</label>
-                    <textarea class="form-control" id="text-desctiption-ID" rows="8"></textarea>
-                </div>
-                <div class="form-group">
-                    <!-- <button class="button" type="button" id="picker">Pick file</button> -->
-                    <button id="picker" type="button" class="btn btn-primary mb-2">Upload Image</button>
-                    <!-- <input type="hidden" id="fileupload"> -->
-                    <input type="text" id="fileupload">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary mb-2">Create New Item</button>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
 
 
-    <!-- <div id="uploadedImage"></div> -->
+        <!-- <div id="uploadedImage"></div> -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-    <script src="js/newitem.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+        <script src="js/newitem.js"></script>
 
-</body>
+    </body>
 
 </html>

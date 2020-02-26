@@ -29,6 +29,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/item-api-routes.js")(app);
 require("./routes/category-api-routes.js")(app);
+require("./routes/user-api-routes")(app);
 
 // const itemController = require("./controllers/items_controller");
 

@@ -3,7 +3,6 @@ var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-const itemRoutes = require("./item-api-routes");
 
 module.exports = function(app) {
 
