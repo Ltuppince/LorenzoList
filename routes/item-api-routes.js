@@ -8,17 +8,8 @@ module.exports = function(app) {
       res.json({});
     } else {
       db.Item.findAll({
-        //where: query,
-        // include: [{
-        //     model: db.User,
-        //     as: "User",
-        //     through: {
-        //       attributes: ['username'],
-        //       //where: {completed: true}
-        //     }
-        //   }]
-        // include: [{ model: db.User, as: "User" }]
-        include: [db.User.username]
+        // where: query,
+        include: [{ model: db.User, as: "User" }]
       }).then(function(dbItem) {
         // res.json(dbItem);
         let itemObj = {
