@@ -1,13 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Message = sequelize.define("Message", {
-    // author_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false
-    // },
-    // recipient_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false
-    // },
+    item_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    
     body: {
       type: DataTypes.TEXT,
       allowNull: false
