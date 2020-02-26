@@ -3,6 +3,7 @@ var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+const itemRoutes = require("./item-api-routes");
 
 module.exports = function(app) {
 
@@ -28,4 +29,13 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+  // app.get("/items", isAuthenticated, (req, res) => {
+  //   let itemroutes = itemRoutes();
+  //   itemroutes.get("/api/items", (req, res) => {
+  //     let itemObj = {
+  //       items: dbItem
+  //     }
+  //     res.render("../views/index", itemObj);
+  //   });
+  // });
 };

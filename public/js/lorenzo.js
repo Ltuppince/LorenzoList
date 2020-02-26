@@ -6,9 +6,12 @@ $(document).ready(function() {
     })
 
     $(".itemCard").on("click", (event) => {
-        let itemID = event.target.id;
+        let itemID = event.target.id
         console.log(itemID);
         // Logic to go to the item page for the selected item
-    })
+        $.get(`/items/${itemID}`, (res) => {
+            window.location.href = `/items/${itemID}`;
+        });
+    });
 });
 
