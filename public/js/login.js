@@ -30,13 +30,9 @@ $(document).ready(function() {
     })
       .then(function() {
         // window.location.replace("/members");
-        $.get("/api/items", function(res) {
-          window.location.href = "/api/items";
-        })
-        // If there's an error, log the error
-
-        //  ---------------------------   TESTING .GET TO DISPLAY HANDLEBARS -----------------------------
-
+        $.get("/items", function(res) {
+          window.location.href = "/items";
+        });
       })
       .catch(function(err) {
         console.log(err);
