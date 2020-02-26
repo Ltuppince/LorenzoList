@@ -1,5 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-  var Message = sequelize.define("Message", { 
+  var Message = sequelize.define("Message", {
+    item_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    
     body: {
       type: DataTypes.TEXT,
       allowNull: false
