@@ -23,7 +23,8 @@ module.exports = function(app) {
       },
       include: [db.Item]
     }).then(function(dbUser) {
-      res.json(dbUser);
+      // res.json(dbUser);
+      res.render("../views/user", dbUser);
     });
   });
 

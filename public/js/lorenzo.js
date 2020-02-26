@@ -5,12 +5,18 @@ $(document).ready(function() {
         // Logic to sort items with the selected category handled here.
     })
 
+    // View single item on item's card click
     $(".itemCard").on("click", (event) => {
         let itemID = event.target.id
-        console.log(itemID);
-        // Logic to go to the item page for the selected item
         $.get(`/items/${itemID}`, (res) => {
             window.location.href = `/items/${itemID}`;
+        });
+    });
+
+    // View all items button function from user's page
+    $("#viewBtn").on("click", (event) => {
+        $.get("/items", function(res) {
+            window.location.href = "/items";
         });
     });
 });

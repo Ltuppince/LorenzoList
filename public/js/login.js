@@ -33,6 +33,10 @@ $(document).ready(function() {
         $.get("/items", function(res) {
           window.location.href = "/items";
         });
+        // Login to user page
+        // $.get("/user", (res) => {
+        //   window.location.href = "/user"
+        // });
       })
       .catch(function(err) {
         console.log(err);
