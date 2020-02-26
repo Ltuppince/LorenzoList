@@ -3,7 +3,7 @@ var db = require("../models");
 var passport = require("../config/passport");
 module.exports = function(app) {
   // GET route for all items
-  app.get("/api/items", function(req, res) {
+  app.get("/items", function(req, res) {
     if (!req.user) {
       res.json({});
     } else {
@@ -16,13 +16,12 @@ module.exports = function(app) {
           items: dbItem
         }
         res.render("../views/index", itemObj);
-        console.log(itemObj.items);
       });
     }
   });
 
   // GET route for single item
-  app.get("/api/items/:id", function(req, res) {
+  app.get("/items/:id", function(req, res) {
     db.Item.findOne({
       where: {
         id: req.params.id

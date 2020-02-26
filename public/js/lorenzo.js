@@ -9,8 +9,8 @@ $(document).ready(function() {
         let itemID = event.target.id
         console.log(itemID);
         // Logic to go to the item page for the selected item
-        $.get(`/api/items/${itemID}`, (res) => {
-            window.location.href = `/api/items/${itemID}`;
+        $.get(`/items/${itemID}`, (res) => {
+            window.location.href = `/items/${itemID}`;
         });
     });
 });

@@ -30,8 +30,8 @@ $(document).ready(function() {
     })
       .then(function() {
         // window.location.replace("/members");
-        $.get("/api/items", function(res) {
-          window.location.href = "/api/items";
+        $.get("/items", function(res) {
+          window.location.href = "/items";
         });
       })
       .catch(function(err) {
