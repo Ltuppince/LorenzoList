@@ -15,7 +15,8 @@
 
 
     <div class="row">
-        <div class="col">
+        <div class="col-sm-12 col-md-6" style="margin-left:auto;margin-right:auto;">
+            <h1>New Item</h1>
             <form id="form-new-item-ID">
                 <div class="form-group">
                     <label for="select-categories-ID">Category</label>
@@ -36,12 +37,14 @@
                 </div>
                 <div class="form-group">
                     <!-- <button class="button" type="button" id="picker">Pick file</button> -->
-                    <button id="picker" type="button" class="btn btn-primary mb-2">Upload Image</button>
+                    <button id="picker" type="button" class="btn btn-primary mb-2">Select Image Upload</button>
                     <!-- <input type="hidden" id="fileupload"> -->
-                    <input type="text" id="fileupload">
+                    <input type="hidden" id="fileupload">
+                    <div id="text-selected-image-ID"></div>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary mb-2">Create New Item</button>
+                    <button type="reset" class="btn btn-primary mb-2">Reset</button>
                 </div>
             </form>
         </div>
