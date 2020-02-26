@@ -46,7 +46,12 @@ $(document).ready(function() {
   function updateForm(result) {
     const fileData = result.filesUploaded[0];
     fileInput.value = fileData.url;
+    $("#text-selected-image-ID").text(fileData.url);
   };
+
+  form.addEventListener('reset', function(e) {
+
+  });
 
   function postNewItem(userId, categoryId, title, price, post, imgURL) {
     $.post("/api/items", {
@@ -59,7 +64,7 @@ $(document).ready(function() {
       })
       .then(function(data) {
         console.log(data);
-        window.location.replace(`/item/${data.id}`);
+        window.location.replace(`/items/${data.id}`);
       })
       .catch(handleNewItemErr);
   }
