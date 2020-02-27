@@ -33,7 +33,7 @@ module.exports = function(app) {
         items: dbItem
       }
       res.render("../views/item", itemObj);
-      console.log(itemObj.items);
+      console.log(itemObj.items.dataValues.img);
     });
   });
 
