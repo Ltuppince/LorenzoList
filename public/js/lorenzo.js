@@ -5,17 +5,6 @@ $(document).ready(function() {
         // Logic to sort items with the selected category handled here.
     });
 
-    // Delete item from user's page
-    // $(".deleteBtn").on("click", (event) => {
-    //     event.preventDefault();
-    //     // Logic handled here...
-    //     let itemID = event.target.id;
-    //     $.delete(`/api/items/${itemID}`, (res) => {
-    //         // window.location.reload();
-    //         console.log(res);
-    //     });
-    // });
-
     $(".deleteBtn").on("click", (event) => {
         event.preventDefault();
         let itemID = event.target.id;
@@ -44,12 +33,15 @@ $(document).ready(function() {
     });
 
     // -------- TEST ------------ TRYING TO GET BACK TO USER PROFILE FROM VIEW ITEM PAGE 
-    $("#profileBtn").on("click", (email) => {
-        console.log(email);
-        // let id = email.id
-        // $.get(`/users/${id}`, (res) => {
-        //   window.location.href = `/users/${email.id}`;
-        // });
+    $("#profileBtn").on("click", (event) => {
+        event.preventDefault();
+        // window.location.href = `/users/${email.id}`;
+        // console.log(event.target.id);
+
+        $.get("/api/user_data").then((res) => {
+            console.log(res.id);
+            window.location.href = `/users/${res.id}`;
+        });
     });
 });
 
