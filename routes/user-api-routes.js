@@ -16,14 +16,18 @@ module.exports = function(app) {
   });
 
   // GET route for single author
-  app.get("/api/users/:id", function(req, res) {
+  app.get("/users/:id", function(req, res) {
     db.User.findOne({
       where: {
         id: req.params.id
       },
       include: [db.Item]
     }).then(function(dbUser) {
-      res.json(dbUser);
+      let userObj = {
+        user: dbUser
+      }
+      // res.json(dbUser);
+      res.render("../views/user", userObj);
     });
   });
 

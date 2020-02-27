@@ -34,3 +34,7 @@ form.login {
 .uk-card:hover {
   cursor: pointer;
 }
+
+#postContainer {
+  margin: 0 auto;
+}

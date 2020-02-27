@@ -1,0 +1,26 @@
+<div class="jumbotron text-center">
+  <h1 class="display-4">Welcome, {{user.dataValues.username}}!</h1>
+  <p class="lead">What would you like to do?</p>
+  <hr class="my-4">
+  <a class="btn btn-info btn-lg" id="postBtn" href="/newitem.html" role="button">Post Item</a>
+  <a class="btn btn-info btn-lg" id="viewBtn" href="#" role="button">View Items</a>
+  <a class="btn btn-info btn-lg" href="/logout" role="button">Logout</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        {{#each user.Items}}
+        <div class="uk-grid-match col-lg-4 col-md-4 col-sm-6" data-id="{{dataValues.id}}" data-cat="{{dataValues.CategoryId}}" uk-grid>
+            <div class="uk-card uk-card-default uk-card-hover" id="{{dataValues.id}}">
+                <div class="uk-card-body itemCard" id="{{dataValues.id}}">
+                    <h3 class="uk-card-title" id="{{dataValues.id}}">{{dataValues.title}}</h3>
+                    <p id="{{dataValues.id}}">${{dataValues.price}}</p>
+                </div>
+                <div class="uk-card-footer">
+                    <a id="{{dataValues.id}}" class="uk-button uk-button-text deleteBtn">Delete Item</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

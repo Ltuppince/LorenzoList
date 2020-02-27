@@ -28,10 +28,11 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
-        // window.location.replace("/members");
-        $.get("/items", function(res) {
-          window.location.href = "/items";
+      .then(function(email) {
+        // Login to user page
+        let id = email.id
+        $.get(`/users/${id}`, (res) => {
+          window.location.href = `/users/${email.id}`;
         });
       })
       .catch(function(err) {
