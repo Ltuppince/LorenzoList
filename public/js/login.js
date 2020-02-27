@@ -33,7 +33,6 @@ $(document).ready(function() {
         let id = email.id
         $.get(`/users/${id}`, (res) => {
           window.location.href = `/users/${email.id}`;
-          console.log(email.id.Items);
         });
       })
       .catch(function(err) {

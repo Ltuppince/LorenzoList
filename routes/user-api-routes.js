@@ -28,7 +28,6 @@ module.exports = function(app) {
       }
       // res.json(dbUser);
       res.render("../views/user", userObj);
-      console.log(userObj);
     });
   });
 

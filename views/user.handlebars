@@ -11,13 +11,13 @@
     <div class="row">
         {{#each user.Items}}
         <div class="uk-grid-match col-lg-4 col-md-4 col-sm-6" data-id="{{dataValues.id}}" data-cat="{{dataValues.CategoryId}}" uk-grid>
-            <div class="itemCard" id="{{dataValues.id}}">
-                <div class="uk-card uk-card-default uk-card-hover uk-card-body" id="{{dataValues.id}}">
+            <div class="uk-card uk-card-default uk-card-hover" id="{{dataValues.id}}">
+                <div class="uk-card-body itemCard" id="{{dataValues.id}}">
                     <h3 class="uk-card-title" id="{{dataValues.id}}">{{dataValues.title}}</h3>
                     <p id="{{dataValues.id}}">${{dataValues.price}}</p>
-                    <div class="uk-card-footer">
-                        <a href="#" class="uk-button uk-button-text">Delete Item</a>
-                    </div>
+                </div>
+                <div class="uk-card-footer">
+                    <a id="{{dataValues.id}}" class="uk-button uk-button-text deleteBtn">Delete Item</a>
                 </div>
             </div>
         </div>
