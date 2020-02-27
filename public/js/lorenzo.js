@@ -19,5 +19,12 @@ $(document).ready(function() {
             window.location.href = "/items";
         });
     });
+
+    $("#profileBtn").on("click", (email) => {
+        let id = email.id
+        $.get(`/users/${id}`, (res) => {
+          window.location.href = `/users/${email.id}`;
+        });
+    });
 });
 
