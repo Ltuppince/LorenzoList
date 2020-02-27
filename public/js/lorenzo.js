@@ -38,7 +38,6 @@ $(document).ready(function() {
         event.preventDefault();
 
         $.get("/api/user_data").then((res) => {
-            console.log(res.id);
             window.location.href = `/users/${res.id}`;
         });
     });
