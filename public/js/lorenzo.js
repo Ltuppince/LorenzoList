@@ -5,6 +5,7 @@ $(document).ready(function() {
         // Logic to sort items with the selected category handled here.
     });
 
+    // Button functionality to delete button on click 
     $(".deleteBtn").on("click", (event) => {
         event.preventDefault();
         let itemID = event.target.id;
@@ -32,11 +33,9 @@ $(document).ready(function() {
         });
     });
 
-    // -------- TEST ------------ TRYING TO GET BACK TO USER PROFILE FROM VIEW ITEM PAGE 
+    // Button functionality to redirect user back to the user page
     $("#profileBtn").on("click", (event) => {
         event.preventDefault();
-        // window.location.href = `/users/${email.id}`;
-        // console.log(event.target.id);
 
         $.get("/api/user_data").then((res) => {
             console.log(res.id);
