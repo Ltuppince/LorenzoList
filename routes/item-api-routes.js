@@ -33,7 +33,32 @@ module.exports = function(app) {
         items: dbItem
       }
       res.render("../views/item", itemObj);
-      console.log(itemObj.items.dataValues.img);
+    });
+  });
+
+  app.get("/itemsCategory/:id", function(req, res) {
+    db.Item.findAll({
+      where: {
+        CategoryId: req.params.id
+      }
+    }).then(function(dbItem) {
+      let itemObj = {
+        items: dbItem
+      }
+      res.render("../views/itemsByCategory", itemObj);
+    });
+  });
+
+  // GET route for single item by title
+  app.get("/items/:title", (req, res) => {
+    db.Item.findAll({
+      where: {
+        title: req.params.title
+      }
+    }).then((dbItem) => {
+      let itemObj = {
+        items: dbItem
+      }
     });
   });
 
