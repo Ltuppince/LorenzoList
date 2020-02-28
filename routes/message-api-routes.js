@@ -34,6 +34,30 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/messages/sender/:id", function(req, res) {
+    if (!req.user) {
+      res.json({});
+    } else {
+      db.Message.findAll({
+        where: { AuthorId: req.params.id }
+      }).then(function(dbMessage) {
+        res.json(dbMessage);
+      });
+    }
+  });
+
+  app.get("/api/messages/recipient/:id", function(req, res) {
+    if (!req.user) {
+      res.json({});
+    } else {
+      db.Message.findAll({
+        where: { RecipientId: req.params.id }
+      }).then(function(dbMessage) {
+        res.json(dbMessage);
+      });
+    }
+  });
+
 
   // GET route for single Message
   app.get("/api/messages/:id", function(req, res) {
