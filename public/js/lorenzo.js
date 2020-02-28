@@ -49,6 +49,7 @@ $(document).ready(function() {
     const recipient = button.data('seller');
     const modal = $(this);
     const itemId = modal.find('#item-id').val();
+    const subject = modal.find('#subject-id').val();
     modal.find('.modal-body input').val(recipient)
     $.get("/api/user_data").then((res) => {
       const sender = res.id;
@@ -57,6 +58,7 @@ $(document).ready(function() {
         if (msgBody.length < 1) return;
         let msg = {
           item_id: itemId,
+          subject: subject,
           body: msgBody,
           AuthorId: sender,
           RecipientId: recipient
@@ -68,7 +70,5 @@ $(document).ready(function() {
       });
     });
   });
-
-
 
 });
