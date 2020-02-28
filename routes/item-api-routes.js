@@ -62,6 +62,17 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/items/category/:id", function(req, res) {
+    db.Item.findAll({
+      where: {
+        CategoryId: req.params.id
+      }
+    }).then(function(dbItem) {
+      res.json(dbItem);
+
+    });
+  });
+
   // POST route for saving new item
   app.post("/api/items", function(req, res) {
     db.Item.create(req.body).then(function(dbItem) {
