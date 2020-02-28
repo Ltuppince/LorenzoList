@@ -21,8 +21,7 @@ $(document).ready(function() {
   const form = document.getElementById('form-new-item-ID');
   const fileInput = document.getElementById('fileupload');
   const btn = document.getElementById('picker');
-  //   const nameBox = document.getElementById('nameBox');
-  //   const urlBox = document.getElementById('urlBox');
+
   btn.addEventListener('click', function(e) {
     e.preventDefault();
     picker.open();
