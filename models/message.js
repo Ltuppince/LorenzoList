@@ -1,10 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
   var Message = sequelize.define("Message", {
+    subject: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     item_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    
     body: {
       type: DataTypes.TEXT,
       allowNull: false

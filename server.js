@@ -30,6 +30,7 @@ require("./routes/api-routes.js")(app);
 require("./routes/item-api-routes.js")(app);
 require("./routes/category-api-routes.js")(app);
 require("./routes/user-api-routes")(app);
+require("./routes/message-api-routes")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
