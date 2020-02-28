@@ -69,6 +69,37 @@ $(document).ready(function() {
         });
       });
     });
+
+    // Search button function
+    $("#navBtn").on("click", (event) => {
+      event.preventDefault();
+      let searchedItem = $("#searchedItem").val();
+
+      $.get(`/items/${searchedItem}`, (res) => {
+        // window.location.href = `/items/${searchedItem}`;
+        console.log(searchedItem);
+      });
+    });
+
+    function populateCategories() {
+      $.get("/api/categories").then((data) => {
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+          let categoryOpt = $("<option class='categoryBtn'>").text(data[i].name).attr("id", data[i].id);
+          $(".categorySelect").append(categoryOpt);
+        }
+      })
+    }
+
+    populateCategories();
+
+    $(document.body).on("change", ".categorySelect", (event) => {
+      let categoryID = event.target.selectedIndex;
+
+      $.get(`/itemsCategory/${categoryID}`, (res) => {
+        window.location.href = `/itemsCategory/${categoryID}`;
+      });
+    });
   });
 
 });

@@ -32,10 +32,6 @@ require("./routes/category-api-routes.js")(app);
 require("./routes/user-api-routes")(app);
 require("./routes/message-api-routes")(app);
 
-// const itemController = require("./controllers/items_controller");
-
-// app.use(itemController);
-
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
