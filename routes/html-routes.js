@@ -38,13 +38,13 @@ module.exports = function(app) {
 
   app.get("/message/:id", isAuthenticated, function(req, res) {
     let msgId = req.params.id;
-    fs.readFile(path.join(__dirname, "../lib/html/message.template.html"), function(err, buf) {
+    fs.readFile(path.join(__dirname, "../public/lib/message.template.html"), function(err, buf) {
       console.log(buf.toString());
       buf = buf.toString().replace("{{MESSAGE_ID}}", msgId);
-      fs.writeFile(path.join(__dirname, "../public/message.html"), buf, (err) => {
+      fs.writeFile(path.join(__dirname, "../public/messageView.html"), buf, (err) => {
         if (err) console.log(err);
         console.log("Successfully Written to File.");
-        res.sendFile(path.join(__dirname, "../public/message.html"));
+        res.sendFile(path.join(__dirname, "../public/messageView.html"));
       });
     });
 
