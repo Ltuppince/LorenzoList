@@ -44,14 +44,31 @@ $(document).ready(function() {
 
 
   // code for message modal    
-  $('#exampleModal').on('show.bs.modal', function(event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var recipient = button.data('whatever') // Extract info from data-* attributes
-      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
-    modal.find('.modal-title').text('New message to ' + recipient)
+  $('#messageModal').on('show.bs.modal', function(event) {
+    const button = $(event.relatedTarget);
+    const recipient = button.data('seller');
+    const modal = $(this);
+    const itemId = modal.find('#item-id').val();
     modal.find('.modal-body input').val(recipient)
+    $.get("/api/user_data").then((res) => {
+      const sender = res.id;
+      $('#btn-send-message-ID').on('click', function(event) {
+        const msgBody = $("#message-text").val();
+        if (msgBody.length < 1) return;
+        let msg = {
+          item_id: itemId,
+          body: msgBody,
+          AuthorId: sender,
+          RecipientId: recipient
+        }
+        $.post("/api/messages", msg).then((res) => {
+          //console.log(res);
+          modal.modal('hide');
+        });
+      });
+    });
   });
+
+
 
 });
