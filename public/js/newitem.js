@@ -36,7 +36,7 @@ $(document).ready(function() {
     const categoryId = $("#select-categories-ID").val();
     const title = $("#input-title-ID").val();
     const price = $("#input-price-ID").val();
-    const post = $("#text-desctiption-ID").val();
+    const post = $("#text-description-ID").val();
     const img = fileInput.value;
     console.log(userId, categoryId, title);
     postNewItem(userId, categoryId, title, parseInt(price), post, img);
