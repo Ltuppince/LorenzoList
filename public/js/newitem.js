@@ -21,8 +21,7 @@ $(document).ready(function() {
   const form = document.getElementById('form-new-item-ID');
   const fileInput = document.getElementById('fileupload');
   const btn = document.getElementById('picker');
-  //   const nameBox = document.getElementById('nameBox');
-  //   const urlBox = document.getElementById('urlBox');
+
   btn.addEventListener('click', function(e) {
     e.preventDefault();
     picker.open();
@@ -37,7 +36,7 @@ $(document).ready(function() {
     const categoryId = $("#select-categories-ID").val();
     const title = $("#input-title-ID").val();
     const price = $("#input-price-ID").val();
-    const post = $("#text-desctiption-ID").val();
+    const post = $("#text-description-ID").val();
     const img = fileInput.value;
     console.log(userId, categoryId, title);
     postNewItem(userId, categoryId, title, parseInt(price), post, img);
