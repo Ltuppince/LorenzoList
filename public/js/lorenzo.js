@@ -5,6 +5,19 @@ $(document).ready(function() {
     // Logic to sort items with the selected category handled here.
   });
 
+  function populateCategories() {
+    console.log("test-------------------");
+  $.get("/api/categories").then((data) => {
+    console.log(data);
+    for (let i = 0; i < data.length; i++) {
+      let categoryOpt = $("<option class='categoryBtn'>").text(data[i].name).attr("id", data[i].id);
+      $(".categorySelect").append(categoryOpt);
+    }
+  })
+}
+
+populateCategories();
+
   // Button functionality to delete button on click 
   $(".deleteBtn").on("click", (event) => {
     event.preventDefault();
@@ -79,18 +92,6 @@ $(document).ready(function() {
             console.log(searchedItem);
         });
     });
-
-    function populateCategories() {
-      $.get("/api/categories").then((data) => {
-        console.log(data);
-        for (let i = 0; i < data.length; i++) {
-          let categoryOpt = $("<option class='categoryBtn'>").text(data[i].name).attr("id", data[i].id);
-          $(".categorySelect").append(categoryOpt);
-        }
-      })
-    }
-
-    populateCategories();
 
     $(document.body).on("change", ".categorySelect", (event) => {
       let categoryID = event.target.selectedIndex;
