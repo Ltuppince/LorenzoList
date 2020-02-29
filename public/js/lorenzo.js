@@ -43,7 +43,6 @@ $(document).ready(function() {
         let searchedItem = $("#searchedItem").val();
 
         $.get(`/items/${searchedItem}`, (res) => {
-            // window.location.href = `/items/${searchedItem}`;
             console.log(searchedItem);
         });
     });

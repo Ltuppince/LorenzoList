@@ -8,10 +8,8 @@ module.exports = function(app) {
       res.json({});
     } else {
       db.Item.findAll({
-        // where: query,
         include: [{ model: db.User, as: "User" }]
       }).then(function(dbItem) {
-        // res.json(dbItem);
         let itemObj = {
           items: dbItem
         }
@@ -27,8 +25,6 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(dbItem) {
-      // console.log(dbItem);
-      // res.json(dbItem);
       let itemObj = {
         items: dbItem
       }
