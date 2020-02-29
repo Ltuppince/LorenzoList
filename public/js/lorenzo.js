@@ -75,10 +75,9 @@ $(document).ready(function() {
       event.preventDefault();
       let searchedItem = $("#searchedItem").val();
 
-      $.get(`/items/${searchedItem}`, (res) => {
-        // window.location.href = `/items/${searchedItem}`;
-        console.log(searchedItem);
-      });
+        $.get(`/items/${searchedItem}`, (res) => {
+            console.log(searchedItem);
+        });
     });
 
     function populateCategories() {

@@ -26,7 +26,6 @@ module.exports = function(app) {
       let userObj = {
         user: dbUser
       }
-      // res.json(dbUser);
       res.render("../views/user", userObj);
     });
   });
